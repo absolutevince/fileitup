@@ -31,7 +31,7 @@ npm run dev  // or use nodemon
 ## NOTE TO SELF
 **TODO**
 [ ] Routes
+[ ] UI
 [ ] Authentication
 [ ] Prisma
-[ ] UI
 [ ] Deploy
