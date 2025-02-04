@@ -1,37 +1,25 @@
 # Fileitup
-
-- A Personal Storage app that allows user to store files and save local Storage
-
-
-# Features
-(logged in users)
-- File Upload/Download
-- Share folders
-(non-logged in users)
-- View share folders
-- Download files from shared folders
+**A online file storage app that allows users to `organize`, `share` files and save up some storage on their device**<br>
+**Best for backing-up important files, like pictures and documents**
 
 
-## Run locally
+### Features
+> UNDER CONSTRUCTION
 
-Clone:
-```
-git clone https://github.com/absolutevince/fileitup.git
-```
-Install:
-```
-npm init
-```
-Run:
-```
-npm run dev  // or use nodemon
-```
+### Run locally
+> UNDER CONSTRUCTION
 
 
-## NOTE TO SELF
+#### NOTE TO SELF
 **TODO**
-[ ] Routes
-[ ] UI
-[ ] Authentication
-[ ] Prisma
-[ ] Deploy
+- [x] Routes
+    - [x] Index
+    - [x] Login
+    - [x] Register
+- [ ] UI
+    - [ ] Index
+    - [x] Login
+    - [ ] Register
+- [ ] Authentication
+- [ ] Prisma
+- [ ] Deploy
