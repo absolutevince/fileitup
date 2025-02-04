@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title%></title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+  <main>
+    <div class="form-container">
+      <form class="form" action="/login" method="POST">
+        <h2 class="title">File It Up</h2>
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required autocomplete="email">
+        </div>
+        <div class="input-field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required autocomplete="current-password">
+        </div>
+        <button type="submit">Login</button>
+      <a href="/register">Register</a>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
