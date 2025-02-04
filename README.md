@@ -12,14 +12,36 @@
 
 #### NOTE TO SELF
 **TODO**
-- [x] Routes
+- **Routes**
     - [x] Index
     - [x] Login
     - [x] Register
-- [ ] UI
+- **UI**
     - [ ] Index
     - [x] Login
-    - [ ] Register
+    - [x] Register
+- [x] **Registration**
+- [ ] **Login**
+- **Form Validation**
+    - [ ] registration
+    - [ ] login
 - [ ] Authentication
-- [ ] Prisma
+- **Prisma**
+    - **schema**
+        - [x] User
+        - [x] Profile
+        - [x] Folder
+        - [x] File
+    - **find Queries (user)**
+        - [x] byEmal
+        - [ ] byId
+    - **find Queries (folder)**
+        - [ ] byId
+        - [ ] byUser
+    - **find Queries (files)**
+        - [ ] byId
+        - [ ] byUser
+    - **delete Queries (user)**
+        - [x] byEmail
+        - [ ] byId
 - [ ] Deploy

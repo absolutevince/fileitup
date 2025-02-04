@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title%></title>
   <link rel="stylesheet" href="/reset.css">
-  <link rel="stylesheet" href="/login.css">
+  <link rel="stylesheet" href="/form.css">
+  <link rel='stylesheet' href="/notification.css"
 </head>
 <body>
   <main>
     <div class="form-container">
+
+      <%- include("partials/notification", {notif}) %>
       <form class="form" action="/login" method="POST">
         <h2 class="title">File It Up</h2>
         <div class="input-field">
@@ -21,7 +24,7 @@
           <input type="password" name="password" id="password" required autocomplete="current-password">
         </div>
         <button type="submit">Login</button>
-      <a href="/register">Register</a>
+        <a href="/register">Need an account</a>
       </form>
     </div>
   </main>

@@ -5,10 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title%></title>
   <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/form.css">
 </head>
 <body>
   <main>
-    <h1>Register</h1>
+    <div class="form-container">
+      <form class="form" action="/register" method="POST">
+        <h2 class="title">File It Up</h2>
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required autocomplete="email">
+        </div>
+        <div class="input-field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required autocomplete="current-password">
+        </div>
+        <div class="input-field">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" id="firstname" required autocomplete="current-password">
+        </div>
+        <div class="input-field">
+          <label for="password">Last Name</label>
+          <input type="lastname" name="lastname" id="lastname" autocomplete="current-password">
+        </div>
+        <button type="submit">Register</button>
+        <a href="/login">Already have an account</a>
+      </form>
+    </div>
   </main>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<% if(notif.success || notif.error) { %>
+  <% if(notif.success) {%>
+  <div class="notification" style="background-color: var(--clr-accent);">
+    <p><%= notif.success %></p>  
+  </div>
+  <% } else if(notif.error) { %>
+  <div class="notification" style="background-color: var(--clr-danger);">
+    <p><%= notif.error %></p>
+  </div>
+  <% }%>
+<script>
+  const cont = document.querySelector(".notification");
+  setTimeout(() => {
+    cont.style.opacity = 0
+    setTimeout(()=> {
+      cont.remove()
+    }, 300)
+  }, 3000)
+</script>
+<% } %>
