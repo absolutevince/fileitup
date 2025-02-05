@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title%></title>
+  <title><%= props.title %></title>
   <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/notification.css">
 </head>
 <body>
+  <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg}) %>
   <main>
     <h1>Index</h1>
   </main>

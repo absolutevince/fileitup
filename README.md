@@ -21,11 +21,12 @@
     - [x] Login
     - [x] Register
 - [x] **Registration**
-- [ ] **Login**
+- [x] **Login**
+- **Authentication**
+    - [x] login
 - **Form Validation**
     - [ ] registration
     - [ ] login
-- [ ] Authentication
 - **Prisma**
     - **schema**
         - [x] User
@@ -34,7 +35,7 @@
         - [x] File
     - **find Queries (user)**
         - [x] byEmal
-        - [ ] byId
+        - [x] byId
     - **find Queries (folder)**
         - [ ] byId
         - [ ] byUser

@@ -1,12 +1,20 @@
-const variables = require("../lib/variables.cjs");
+const { isNotAuth } = require("../lib/checkAuthentication.cjs");
+const Props = require("../lib/Props.cjs");
+const passport = require("passport");
 
-const loginGet = (req, res) => {
-  res.render("login", {
-    title: variables.title,
-    notif: { success: variables.successMsg, error: null },
-  });
-  // always reset the value to null, for it to not presist on refresh
-  variables.successMsg = null;
-};
+const loginGet = [
+  isNotAuth,
+  (req, res) => {
+    res.render("login", { props: Props.data });
 
-module.exports = { loginGet };
+    // mandatory reset of the notification messages - should always be writter at the end of the block
+    Props.reset(["successMsg", "errorMsg"]);
+  },
+];
+
+const loginPost = passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/login",
+});
+
+module.exports = { loginGet, loginPost };

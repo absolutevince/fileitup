@@ -1,11 +1,11 @@
-<% if(notif.success || notif.error) { %>
-  <% if(notif.success) {%>
+<% if(success || error) { %>
+  <% if(success) {%>
   <div class="notification" style="background-color: var(--clr-accent);">
-    <p><%= notif.success %></p>  
+    <p><%= success %></p>  
   </div>
-  <% } else if(notif.error) { %>
+  <% } else if(error) { %>
   <div class="notification" style="background-color: var(--clr-danger);">
-    <p><%= notif.error %></p>
+    <p><%= error %></p>
   </div>
   <% }%>
 <script>

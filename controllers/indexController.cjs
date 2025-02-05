@@ -1,10 +1,15 @@
 const prismaQuery = require("../db/queries.cjs");
-const variables = require("../lib/variables.cjs");
+const Props = require("../lib/Props.cjs");
+const { isAuth } = require("../lib/checkAuthentication.cjs");
 
-const indexGet = async (req, res) => {
-  res.render("index", { title: variables.title });
-  console.log(await prismaQuery.find.user.byEmail("testing@email.com"));
-  variables.successMsg = "";
-};
+const indexGet = [
+  isAuth,
+  async (req, res) => {
+    res.render("index", { props: Props.data });
+
+    // mandatory reset of the notification messages - should always be written at the end of the block
+    Props.reset(["successMsg", "errorMsg"]);
+  },
+];
 
 module.exports = { indexGet };

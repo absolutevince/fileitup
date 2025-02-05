@@ -12,7 +12,16 @@ const prismaQuery = {
           },
           include: {
             profile: true,
-            profileId: false,
+          },
+        });
+      },
+      byId: async (id) => {
+        return await prisma.user.findFirst({
+          where: {
+            id: id,
+          },
+          include: {
+            profile: true,
           },
         });
       },
