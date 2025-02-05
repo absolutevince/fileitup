@@ -22,7 +22,7 @@ const registerPost = async (req, res) => {
   try {
     await prismaQuery.create.user(creds);
 
-    Props.set("successMsg", "Login Succesful");
+    Props.set("successMsg", "Registration Success");
     res.redirect("/login");
   } catch (error) {
     Props.set("errorMsg", error);
