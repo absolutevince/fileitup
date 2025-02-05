@@ -1,0 +1,13 @@
+.folder {
+  width: 7rem;
+  height: 8rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  text-align: center;
+}
+
+.folder .icon {
+  background-color: var(--clr-grey);
+  border-top-right-radius: 1rem;
+}

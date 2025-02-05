@@ -5,7 +5,8 @@ const { isAuth } = require("../lib/checkAuthentication.cjs");
 const indexGet = [
   isAuth,
   (req, res) => {
-    res.render("index", { props: Props.data });
+    console.log(req.user);
+    res.render("index", { props: Props.data, userProfile: req.user.profile });
     // mandatory reset of the notification messages - should always be written at the end of the block
     Props.reset(["successMsg", "errorMsg"]);
   },

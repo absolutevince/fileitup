@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  height: 3rem;
+}
+
+.header .user {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--clr-light-2);
+  padding: 1rem;
+  border-radius: 1rem;
+}

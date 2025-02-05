@@ -1,0 +1,24 @@
+.index-wrapper {
+  background-color: var(--clr-light);
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 45rem;
+  margin-top: 2rem;
+  box-shadow: 1px 1px 1px var(--clr-grey);
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 5rem);
+}
+
+.content-wrapper .add-folder-button {
+  align-self: end;
+  padding: 1rem 2rem;
+}
+
+.folder-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
