@@ -24,6 +24,7 @@
 - [x] **Login**
 - **Authentication**
     - [x] login
+    - [x] save session
 - **Form Validation**
     - [ ] registration
     - [ ] login
@@ -33,6 +34,7 @@
         - [x] Profile
         - [x] Folder
         - [x] File
+        - [x] Session (storage for session)
     - **find Queries (user)**
         - [x] byEmal
         - [x] byId

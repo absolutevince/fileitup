@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= Props.title %></title>
+  <title><%= props.title %></title>
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/form.css">
 </head>
@@ -11,7 +11,7 @@
   <main>
     <div class="form-container">
       <form class="form" action="/register" method="POST">
-        <h2 class="title"><%= Props.title %></h2>
+        <h2 class="title"><%= props.title %></h2>
         <div class="input-field">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" required autocomplete="email">

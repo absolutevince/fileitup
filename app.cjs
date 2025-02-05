@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const { PrismaSessionStore } = require("@quixo3/prisma-session-store");
 const path = require("path");
 const passport = require("passport");
 const passportInitialize = require("./passportConfig.cjs");
@@ -7,6 +8,7 @@ const indexRouter = require("./router/indexRouter.cjs");
 const loginRouter = require("./router/loginRouter.cjs");
 const registerRouter = require("./router/registerRouter.cjs");
 const Props = require("./lib/Props.cjs");
+const { PrismaClient } = require("@prisma/client");
 
 const app = express();
 passportInitialize(passport); // initialize passport
@@ -23,9 +25,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
+    store: new PrismaSessionStore(new PrismaClient(), {
+      checkPeriod: 2 * 60 * 1000,
+      dbRecordIdFunction: undefined,
+      dbRecordIdIsSessionId: true,
+    }),
     secret: process.env.SESSION_SECRET,
     saveUninitialized: false,
     resave: false,
+    cookie: {
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    },
   }),
 );
 app.use(passport.session());

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node app.cjs"
+    "dev": "node app.cjs",
+    "dev-nodemon": "nodemon app.cjs"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.3.0",
+    "@quixo3/prisma-session-store": "^3.1.13",
     "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
