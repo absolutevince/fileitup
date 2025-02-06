@@ -6,20 +6,20 @@
   <title><%= props.title%></title>
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/form.css">
-  <link rel='stylesheet' href="/notification.css"
+  <link rel='stylesheet' href="/notification.css">
+  <link rel="stylesheet" href="/error-notif.css">
 </head>
 <body>
-  <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg}) %>
   <main>
       <div class="form-container">
         <form class="form" action="/login" method="POST">
           <h2 class="title">File It Up</h2>
           <div class="input-field">
-            <label for="email">Email</label>
+            <label for="email">Email : <%- include("partials/error-notif", {message: props.errorMsg?.emailErrorMsg}) %></label>
             <input type="email" name="email" id="email" required autocomplete="email">
           </div>
           <div class="input-field">
-            <label for="password">Password</label>
+            <label for="password">Password : <%- include("partials/error-notif", {message: props.errorMsg?.passwordErrorMsg}) %> </label>
             <input type="password" name="password" id="password" required autocomplete="current-password">
           </div>
           <button type="submit">Login</button>
