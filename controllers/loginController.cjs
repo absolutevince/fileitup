@@ -5,8 +5,8 @@ const passport = require("passport");
 const loginGet = [
   isNotAuth,
   (req, res) => {
+    console.log(Props.data);
     res.render("login", { props: Props.data });
-
     // mandatory reset of the notification messages - should always be writter at the end of the block
     Props.reset(["successMsg", "errorMsg"]);
   },
