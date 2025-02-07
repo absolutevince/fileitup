@@ -43,6 +43,16 @@ button::after {
   transition: opacity 100ms ease-out;
 }
 
+.btn-accent {
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+}
+
+.btn-gray {
+  background-color: var(--clr-gray);
+  color: var(--clr-black);
+}
+
 button:hover::after {
   opacity: 0.1;
 }
@@ -54,7 +64,26 @@ input {
   border-radius: 0.5rem;
 }
 
-main {
+.wrapper {
   max-width: 1440px;
+  border-radius: 1rem;
+  padding: 1rem;
   margin: 0 auto;
+  margin-top: 3rem;
+  height: 85vh;
+  background-color: var(--clr-light);
+}
+
+.header {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content-wrapper {
+  height: calc(100% - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
