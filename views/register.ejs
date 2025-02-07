@@ -9,32 +9,30 @@
   <link rel="stylesheet" href="/error-notif.css">
 </head>
 <body>
-  <div class="wrapper">
-    <main>
-      <div class="form-container">
-        <form class="form" action="/register" method="POST">
-          <h2 class="title"><%= props.title %></h2>
-          <div class="input-field">
-            <label for="email">Email *: <%- include("partials/error-notif", {message: emailErrorMsg}) %></label>
-            <input type="email" name="email" id="email" required autocomplete="email" >
-          </div>
-            <div class="input-field">
-              <label for="password">Password *: <%- include("partials/error-notif", {message: passwordErrorMsg}) %></label>
-              <input type="password" name="password" id="password" required autocomplete="current-password">
-            </div>
-            <div class="input-field">
-              <label for="firstname">First Name *: <%- include("partials/error-notif", {message: firstnameErrorMsg}) %></label>
-              <input type="text" name="firstname" id="firstname" required autocomplete="name">
-            </div>
-            <div class="input-field">
-              <label for="lastname">Last Name: <%- include("partials/error-notif", {message: lastnameErrorMsg}) %></label>
-              <input type="lastname" name="lastname" id="lastname" autocomplete="name">
-            </div>
-            <button type="submit">Register</button>
-            <a href="/login">Already have an account</a>
-        </form>
-      </div>
-    </main>
-  </div>
+  <main>
+    <div class="form-container">
+      <form class="form" action="/register" method="POST">
+        <h2 class="title"><%= props.title %></h2>
+        <div class="input-field">
+          <label for="email">Email *: <%- include("partials/error-notif", {message: emailErrorMsg}) %></label>
+          <input type="email" name="email" id="email" required autocomplete="email" >
+        </div>
+        <div class="input-field">
+          <label for="password">Password *: <%- include("partials/error-notif", {message: passwordErrorMsg}) %></label>
+          <input type="password" name="password" id="password" required autocomplete="current-password">
+        </div>
+        <div class="input-field">
+          <label for="firstname">First Name *: <%- include("partials/error-notif", {message: firstnameErrorMsg}) %></label>
+          <input type="text" name="firstname" id="firstname" required autocomplete="name">
+        </div>
+        <div class="input-field">
+          <label for="lastname">Last Name: <%- include("partials/error-notif", {message: lastnameErrorMsg}) %></label>
+          <input type="lastname" name="lastname" id="lastname" autocomplete="name">
+        </div>
+        <button type="submit">Register</button>
+        <a href="/login">Already have an account</a>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
