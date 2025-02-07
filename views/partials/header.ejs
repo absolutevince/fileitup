@@ -1,4 +1,25 @@
 <header class="header">
   <h1><%= title %></h1>
-  <button class="btn-accent">Add Folder</button>
+  <button onclick="openDialog()" class="btn-accent">Add Folder</button>
 </header>
+<dialog>
+  <div class="form-wrapper">
+  <div class="header">
+    <p>Create Folder</p>
+    <button onclick="closeDialog()" class="btn-danger close-dialog-btn">x</button>
+  </div>
+  <form action="/create-folder">
+    <input type="text">
+    <button>Create</button>
+  </form>
+  </div>
+</dialog>
+<script>
+  const dialog = document.querySelector("dialog");
+  function openDialog() { 
+    dialog.showModal()
+  }
+  function closeDialog() {
+    dialog.close()
+  }
+</script>
