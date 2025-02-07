@@ -1,0 +1,11 @@
+.navigation {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.navigation .user-profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

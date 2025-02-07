@@ -1,0 +1,22 @@
+.folders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.folder {
+  min-width: 25ch;
+  background-color: var(--clr-light-2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.folder:hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 0.5rem;
+  inset: 0;
+  background-color: var(--clr-primary);
+  opacity: 0.3;
+}

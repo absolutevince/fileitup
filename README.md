@@ -26,8 +26,8 @@
     - [x] login
     - [x] save session
 - **Form Validation**
-    - [ ] registration
-    - [ ] login
+    - [x] registration
+    - [x] login
 - **Prisma**
     - **schema**
         - [x] User
