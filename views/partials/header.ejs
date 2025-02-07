@@ -8,8 +8,8 @@
     <p>Create Folder</p>
     <button onclick="closeDialog()" class="btn-danger close-dialog-btn">x</button>
   </div>
-  <form action="/create-folder">
-    <input type="text">
+  <form action="/create-folder?profile=<%= profileId %>" method="POST">
+    <input type="text" name="name">
     <button>Create</button>
   </form>
   </div>

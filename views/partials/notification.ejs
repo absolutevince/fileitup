@@ -1,7 +1,19 @@
-<% if(success){ %>
+<% if(success || error || createFolderErrors){ %>
+<% if (success)  {%> 
   <div class="notification" style="background-color: var(--clr-accent);">
     <p><%= success %></p>  
   </div>
+  <% } else if(error) {%> 
+  <div class="notification" style="background-color: var(--clr-danger);">
+    <p><%= error %></p>  
+  </div>
+  <%} else if(createFolderErrors.length > 0) { %>
+  <div class="notification" style="background-color: var(--clr-danger);">
+    <% for(let i = 0; i < createFolderErrors.length; i++)  {%>
+    <p><%= createFolderErrors[i].msg %></p>
+    <% }%>
+  </div> 
+  <% } %>
 <script>
   const cont = document.querySelector(".notification");
   setTimeout(() => {

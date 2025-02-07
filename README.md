@@ -17,7 +17,7 @@
     - [x] Login
     - [x] Register
 - **UI**
-    - [ ] Index
+    - [x] Index
     - [x] Login
     - [x] Register
 - [x] **Registration**
@@ -28,6 +28,8 @@
 - **Form Validation**
     - [x] registration
     - [x] login
+    - [x] folder creation
+    - [ ] folder creation validation 
 - **Prisma**
     - **schema**
         - [x] User

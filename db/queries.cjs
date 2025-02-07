@@ -42,6 +42,20 @@ const prismaQuery = {
         },
       });
     },
+    folder: async ({ folderName, profileId }) => {
+      await prisma.profile.update({
+        where: {
+          id: profileId,
+        },
+        data: {
+          folder: {
+            create: {
+              name: folderName,
+            },
+          },
+        },
+      });
+    },
   },
   delete: {
     user: {

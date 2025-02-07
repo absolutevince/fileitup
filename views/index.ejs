@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="/folder.css">
 </head>
 <body>
-  <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg}) %>
+  <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg, createFolderErrors: props?.createFolderErrors }) %>
   <div class="wrapper">
-    <%- include("partials/header", {title: "Folders"}) %>
+    <%- include("partials/header", {title: "Folders", profileId: user.profile.id}) %>
     <main class="content-wrapper"> 
       <%- include("partials/folders") %>
       <%- include("partials/navigation") %>

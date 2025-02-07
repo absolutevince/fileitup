@@ -40,13 +40,13 @@ const registerPost = [
         };
         await prismaQuery.create.user(creds);
 
-        Props.set("successMsg", "Registration Success");
+        Props.set("successMsg", { currentValue: "Registered Succesfully" });
         res.redirect("/login");
       } else {
         throw errors.errors;
       }
     } catch (error) {
-      Props.set("errorMsg", error);
+      Props.set("errorMsg", { current: error });
       res.redirect("/register");
     }
   },
