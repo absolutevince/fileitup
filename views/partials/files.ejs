@@ -1,7 +1,42 @@
 <section class="files">
   <% if(files.length > 0) { %>
-  <%- include("./file", {file: files[i]}) %>
+  <% for(let i = 0; i < files.length; i++) {%>
+  <%- include("./file", {file: files[i]}) %> 
+  <% } %>
   <% } else {%>
   <p class="no-file-text">No Files</p>
   <% } %>
+  <dialog class="file-dialog">
+  </dialog>
+  <script>
+      const fileDialog = document.querySelector(".file-dialog");
+    function openFile(file) {
+      fileDialog.innerHTML = "";
+      const div = document.createElement("div");
+      const buttonDiv = document.createElement("div");
+      const dataDiv = document.createElement("div");
+      const name = document.createElement("p");
+      const size = document.createElement("p");
+      const uploadedAt = document.createElement('p');
+      const download = document.createElement("button");
+      const closeButton = document.createElement("button");
+
+      closeButton.addEventListener("click", () => fileDialog.close())
+
+      name.innerText = file.name;
+      size.innerText = file.size;
+      uploadedAt.innerText = file.uploadedAt;
+      download.innerText = "Download"
+      closeButton.innerText ="Close";
+      closeButton.className = "btn-danger"
+
+
+      dataDiv.append(name, size, uploadedAt);
+      buttonDiv.append(download , closeButton);
+      div.append(dataDiv, buttonDiv);
+      fileDialog.append(div);
+
+      fileDialog.showModal()
+    }
+  </script>
 </section>

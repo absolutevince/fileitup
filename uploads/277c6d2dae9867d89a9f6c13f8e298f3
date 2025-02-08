@@ -1,0 +1,59 @@
+# SECRET SOCIETY
+
+_not really secret sociecty, more like a "on-click = a member" society._
+
+**A community app where a user can join/create clubs and filled it with beautiful conversations with other club members**
+
+## How to run locally
+
+### Requirements
+
+- Posgresql
+- You should have already set-up posgresql and created a role
+
+### Steps
+
+```bash
+git clone https://github.com/absolutevince/secret-society.git &&
+cd secret-society
+```
+
+create a .env on the root folder with the format:
+
+```c
+SESSION_SECRET // session secret phrase
+DB_USER // database user
+DB_PW // database password
+DB_HOST // database host
+DB_PORT // database port
+DB_DB // database
+```
+
+run the following:
+
+_download the dependencies_
+
+```bash
+npm init
+```
+
+_initialize database and creates the necessary tables with additional session table from `connect-pg-simple` to store session_
+
+```bash
+npm init-db
+```
+
+_run the server_
+
+```c
+npm run serve // runs node app.js --watch
+npm run serve-nodemon // runs nodemon app.js  (nodemon required)
+```
+
+**_Miscellaneous:_**
+
+_to reset the database from scratch (deletes everything)_
+
+```bash
+npm reset-db
+```

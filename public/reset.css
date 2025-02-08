@@ -63,6 +63,13 @@ button::after .btn::after {
   background-color: var(--clr-danger);
 }
 
+.btn-item {
+  background-color: transparent;
+  padding: 0;
+  color: var(--clr-black);
+  text-decoration: underline;
+}
+
 button:hover::after {
   opacity: 0.1;
 }
