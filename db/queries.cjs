@@ -21,7 +21,19 @@ const prismaQuery = {
             id: id,
           },
           include: {
-            profile: true,
+            profile: { include: { folder: { include: { file: true } } } },
+          },
+        });
+      },
+    },
+    folder: {
+      byId: async (id) => {
+        return await prisma.folder.findFirst({
+          where: {
+            id: id,
+          },
+          include: {
+            file: true,
           },
         });
       },

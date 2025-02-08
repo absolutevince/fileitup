@@ -1,0 +1,7 @@
+<section class="files">
+  <% if(files.length > 0) { %>
+  <%- include("./file", {file: files[i]}) %>
+  <% } else {%>
+  <p class="no-file-text">No Files</p>
+  <% } %>
+</section>

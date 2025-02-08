@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +15,10 @@
 <body>
   <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg, createFolderErrors: props?.createFolderErrors }) %>
   <div class="wrapper">
-    <%- include("partials/header", {title: "Folders", profileId: profile.id}) %>
+    <%- include("partials/header", {title: folder.name, profileId: profile.id}) %>
     <main class="content-wrapper"> 
-      <%- include("partials/folders", {folders}) %>
-      <%- include("partials/navigation", {name: profile.firstname}) %>
+      <%- include("partials/files", {files: folder.file}) %>
+      <%- include("partials/navigation",{name: profile.firstname}) %>
     </main>
   </div>
 </body>

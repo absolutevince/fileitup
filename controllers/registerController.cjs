@@ -46,7 +46,7 @@ const registerPost = [
         throw errors.errors;
       }
     } catch (error) {
-      Props.set("errorMsg", { current: error });
+      Props.set("errorMsg", { currentValue: error });
       res.redirect("/register");
     }
   },

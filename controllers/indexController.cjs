@@ -8,11 +8,26 @@ const indexGet = [
   (req, res) => {
     res.render("index", {
       props: Props.data,
-      user: req.user,
+      profile: req.user?.profile,
+      folders: req.user?.profile.folder,
+      route: "home",
     });
 
     // mandatory reset of the notification messages - should always be written at the end of the block
     Props.reset(["successMsg", "errorMsg", "createFolderErrors"]);
+  },
+];
+
+const viewFolderGet = [
+  isAuth,
+  async (req, res) => {
+    const selectedFolder = await prismaQuery.find.folder.byId(req.params.id);
+    res.render("folder", {
+      props: Props.data,
+      profile: req.user.profile,
+      folder: selectedFolder,
+      route: "folder",
+    });
   },
 ];
 
@@ -43,4 +58,4 @@ const createFolderPost = [
   },
 ];
 
-module.exports = { indexGet, createFolderPost };
+module.exports = { indexGet, createFolderPost, viewFolderGet };

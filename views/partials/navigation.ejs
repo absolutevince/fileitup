@@ -1,6 +1,9 @@
 <nav class='navigation'>
+  <a href="/" class="btn btn">Home</a>
   <div class='user-profile'>
-    <p>User Name</p>
-    <button class="btn-gray">Logout</button>
+    <p><%= name %></p>
+    <form action="/logout" method="POST">
+      <button  class="btn-gray">Logout</button>
+    </form>
   </div>
 </nav>

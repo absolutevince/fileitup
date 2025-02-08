@@ -13,21 +13,24 @@ const passportInitialize = (passport) => {
           const user = await prismaQuery.find.user.byEmail(email);
           if (!user) {
             Props.set("errorMsg", {
-              emailErrorMsg: "Email not registered",
-              passwordErrorMsg: null,
+              currentValue: {
+                emailErrorMsg: "Email not registered",
+                passwordErrorMsg: null,
+              },
             });
             return done(null, false);
           }
           if (await bcrypt.compare(password, user.password)) {
-            Props.set(
-              "successMsg",
-              `Login Successful: Welcome ${user.profile.firstname}`,
-            );
+            Props.set("successMsg", {
+              currentValue: `Login Successful: Welcome ${user.profile.firstname}`,
+            });
             return done(null, user);
           } else {
             Props.set("errorMsg", {
-              passwordErrorMsg: "Incorrect Password",
-              emailErrorMsg: null,
+              currentValue: {
+                passwordErrorMsg: "Incorrect Password",
+                emailErrorMsg: null,
+              },
             });
             return done(null, false);
           }

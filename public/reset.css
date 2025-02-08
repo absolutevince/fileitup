@@ -27,7 +27,8 @@ html {
   color: var(--clr-black);
 }
 
-button {
+button,
+.btn {
   padding: 0.5em 1em;
   background-color: var(--clr-primary);
   color: var(--clr-light);
@@ -36,9 +37,10 @@ button {
   cursor: pointer;
   position: relative;
   font-size: 1rem;
+  text-decoration: none;
 }
 
-button::after {
+button::after .btn::after {
   content: "";
   inset: 0;
   background-color: var(--clr-light);

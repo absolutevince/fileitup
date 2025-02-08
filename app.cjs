@@ -44,6 +44,9 @@ app.use(passport.initialize());
 app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
+app.get("*", (req, res) => {
+  res.send("404 not found");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

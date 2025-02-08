@@ -1,7 +1,12 @@
 <header class="header">
   <h1><%= title %></h1>
+  <% if(route === "home") { %>
   <button onclick="openDialog()" class="btn-accent">Add Folder</button>
+  <%} else if(route === "folder") {%> 
+  <button class="btn-accent">Upload File</button>
+  <% } %>
 </header>
+<% if(route === "home") { %>
 <dialog>
   <div class="form-wrapper">
   <div class="header">
@@ -23,3 +28,4 @@
     dialog.close()
   }
 </script>
+<% } %>

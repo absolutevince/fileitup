@@ -20,3 +20,8 @@
   background-color: var(--clr-primary);
   opacity: 0.3;
 }
+
+.no-file-text {
+  text-align: center;
+  font-size: 2rem;
+}
