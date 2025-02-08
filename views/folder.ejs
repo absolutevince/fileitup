@@ -15,9 +15,9 @@
 <body>
   <%- include("partials/notification", {success: props.successMsg, error: props.errorMsg, createFolderErrors: props?.createFolderErrors }) %>
   <div class="wrapper">
-    <%- include("partials/header", {title: folder.name, profileId: profile.id}) %>
+    <%- include("partials/header", {title: folder.name, profileId: profile.id, folderId: folder.id}) %>
     <main class="content-wrapper"> 
-      <%- include("partials/files", {files: folder.file}) %>
+      <%- include("partials/files", {files: files}) %>
       <%- include("partials/navigation",{name: profile.firstname}) %>
     </main>
   </div>

@@ -2,6 +2,7 @@ const { body, validationResult } = require("express-validator");
 const prismaQuery = require("../db/queries.cjs");
 const Props = require("../lib/Props.cjs");
 const { isAuth } = require("../lib/checkAuthentication.cjs");
+const UploadedFiles = require("../lib/uploadedFiles.cjs");
 
 const indexGet = [
   isAuth,
@@ -22,10 +23,12 @@ const viewFolderGet = [
   isAuth,
   async (req, res) => {
     const selectedFolder = await prismaQuery.find.folder.byId(req.params.id);
+    console.log(selectedFolder);
     res.render("folder", {
       props: Props.data,
       profile: req.user.profile,
       folder: selectedFolder,
+      files: selectedFolder.file,
       route: "folder",
     });
   },

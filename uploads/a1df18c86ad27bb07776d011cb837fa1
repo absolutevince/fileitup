@@ -1,0 +1,15 @@
+# NOTES
+
+# Database flow
+
+1. `user`
+1. `user.id` is connected to an `account`
+1. `account.id` is connected to a `club`
+1. `club.id` connect to a `post`
+1. `post.id` is connect to an `account`
+
+# Priveleges
+
+- non-members are not allowed to veiw messages
+- admin have the ability to delete posts, if deemed inappropriate
+- anyone can join the with just a click of a button

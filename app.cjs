@@ -7,6 +7,7 @@ const passportInitialize = require("./passportConfig.cjs");
 const indexRouter = require("./router/indexRouter.cjs");
 const loginRouter = require("./router/loginRouter.cjs");
 const registerRouter = require("./router/registerRouter.cjs");
+const uploadRouter = require("./router/uploadRouter.cjs");
 const Props = require("./lib/Props.cjs");
 const { PrismaClient } = require("@prisma/client");
 
@@ -44,6 +45,7 @@ app.use(passport.initialize());
 app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
+app.use("/upload-file", uploadRouter);
 app.get("*", (req, res) => {
   res.send("404 not found");
 });

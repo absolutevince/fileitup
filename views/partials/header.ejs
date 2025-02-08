@@ -1,17 +1,17 @@
 <header class="header">
   <h1><%= title %></h1>
   <% if(route === "home") { %>
-  <button onclick="openDialog()" class="btn-accent">Add Folder</button>
+  <button onclick="openFolderDialog()" class="btn-accent">Add Folder</button>
   <%} else if(route === "folder") {%> 
-  <button class="btn-accent">Upload File</button>
+  <button  onclick="openFileDialog()" "btn-accent">Upload File</button>
   <% } %>
 </header>
 <% if(route === "home") { %>
-<dialog>
+<dialog class="dialog-folder">
   <div class="form-wrapper">
   <div class="header">
     <p>Create Folder</p>
-    <button onclick="closeDialog()" class="btn-danger close-dialog-btn">x</button>
+    <button onclick="closeFolderDialog()" class="btn-danger close-dialog-btn">x</button>
   </div>
   <form action="/create-folder?profile=<%= profileId %>" method="POST">
     <input type="text" name="name">
@@ -20,12 +20,34 @@
   </div>
 </dialog>
 <script>
-  const dialog = document.querySelector("dialog");
-  function openDialog() { 
-    dialog.showModal()
+  const dialogFolder = document.querySelector(".dialog-folder");
+  function openFolderDialog() { 
+    dialogFolder.showModal()
   }
-  function closeDialog() {
-    dialog.close()
+  function closeFolderDialog() {
+    dialogFolder.close()
+  }
+</script>
+<% } else if(route === "folder") { %>
+<dialog class="dialog-file">
+  <div class="form-wrapper">
+  <div class="header">
+    <p>Upload File</p>
+    <button onclick="closeFileDialog()" class="btn-danger close-dialog-btn">x</button>
+  </div>
+  <form action="/upload-file/<%= folderId %>" enctype="multipart/form-data" method="POST">
+    <input type="file" name="file">
+    <button>Upload</button>
+  </form>
+  </div>
+</dialog>
+<script>
+  const dialogFile = document.querySelector(".dialog-file");
+  function openFileDialog() { 
+    dialogFile.showModal()
+  }
+  function closeFileDialog() {
+    dialogFile.close()
   }
 </script>
 <% } %>

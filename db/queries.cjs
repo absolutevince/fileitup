@@ -38,6 +38,15 @@ const prismaQuery = {
         });
       },
     },
+    file: {
+      byFolder: async (folderId) => {
+        return await prisma.file.findMany({
+          where: {
+            folderId: folderId,
+          },
+        });
+      },
+    },
   },
   create: {
     user: async ({ email, password, firstname, lastname }) => {
@@ -63,6 +72,21 @@ const prismaQuery = {
           folder: {
             create: {
               name: folderName,
+            },
+          },
+        },
+      });
+    },
+    file: async ({ name, folderId, size }) => {
+      await prisma.folder.update({
+        where: {
+          id: folderId,
+        },
+        data: {
+          file: {
+            create: {
+              name: name,
+              size: size,
             },
           },
         },
