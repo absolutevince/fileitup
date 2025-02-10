@@ -14,11 +14,13 @@ const cloudStorage = (() => {
           {
             resource_type: "auto",
             public_id: filename,
+            flags: "attachment",
           },
           (err, result) => {
             if (err) {
               reject(err);
             } else {
+              console.log(result);
               resolve(result.secure_url);
             }
           },

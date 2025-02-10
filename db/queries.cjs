@@ -84,7 +84,7 @@ const prismaQuery = {
         },
       });
     },
-    file: async ({ name, folderId, size, filename, url }) => {
+    file: async ({ name, folderId, size, filename, url, mimetype }) => {
       await prisma.folder.update({
         where: {
           id: folderId,
@@ -96,6 +96,7 @@ const prismaQuery = {
               size,
               filename,
               url,
+              mimetype,
             },
           },
         },

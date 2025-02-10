@@ -9,11 +9,13 @@ const uploadPost = [
   isAuth,
   upload.single("file"),
   async (req, res) => {
+    console.log(req.file);
     const file = {
       name: req.file.originalname,
       folderId: req.params.folderId,
       size: req.file.size + " bytes",
       content: req.file.buffer,
+      mimetype: req.file.mimetype,
     };
 
     // add the file details to database connected to the users account

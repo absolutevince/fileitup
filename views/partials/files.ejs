@@ -30,12 +30,12 @@
       closeButton.innerText ="Close";
       closeButton.className = "btn-danger"
       download.className = "btn"
-      buttonDiv.className = "button-container"
+      buttonDiv.className = "button-container";
 
-      download.href = file.url;
+      download.href = "/download/" + file.id;
       download.download = file.name; 
-    
 
+  
       dataDiv.append(name, size, uploadedAt);
       buttonDiv.append(download , closeButton);
       div.append(dataDiv, buttonDiv);
