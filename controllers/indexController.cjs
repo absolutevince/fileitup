@@ -3,6 +3,7 @@ const prismaQuery = require("../db/queries.cjs");
 const Props = require("../lib/Props.cjs");
 const { isAuth } = require("../lib/checkAuthentication.cjs");
 const UploadedFiles = require("../lib/uploadedFiles.cjs");
+const { createFolderValidator } = require("../lib/validator.cjs");
 
 const indexGet = [
   isAuth,
@@ -23,7 +24,6 @@ const viewFolderGet = [
   isAuth,
   async (req, res) => {
     const selectedFolder = await prismaQuery.find.folder.byId(req.params.id);
-    console.log(selectedFolder);
     res.render("folder", {
       props: Props.data,
       profile: req.user.profile,
@@ -35,11 +35,7 @@ const viewFolderGet = [
 ];
 
 const createFolderPost = [
-  body("name")
-    .notEmpty()
-    .withMessage("Folder must have a name")
-    .trim()
-    .escape(),
+  createFolderValidator,
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

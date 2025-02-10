@@ -46,6 +46,13 @@ const prismaQuery = {
           },
         });
       },
+      byId: async (id) => {
+        return await prisma.file.findFirst({
+          where: {
+            id: id,
+          },
+        });
+      },
     },
   },
   create: {
@@ -77,7 +84,7 @@ const prismaQuery = {
         },
       });
     },
-    file: async ({ name, folderId, size }) => {
+    file: async ({ name, folderId, size, filename, url }) => {
       await prisma.folder.update({
         where: {
           id: folderId,
@@ -85,8 +92,10 @@ const prismaQuery = {
         data: {
           file: {
             create: {
-              name: name,
-              size: size,
+              name,
+              size,
+              filename,
+              url,
             },
           },
         },

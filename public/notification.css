@@ -4,4 +4,5 @@
   top: 0;
   width: 100%;
   transition: opacity 300ms ease-in;
+  z-index: 2;
 }

@@ -8,6 +8,7 @@ const indexRouter = require("./router/indexRouter.cjs");
 const loginRouter = require("./router/loginRouter.cjs");
 const registerRouter = require("./router/registerRouter.cjs");
 const uploadRouter = require("./router/uploadRouter.cjs");
+const downloadRouter = require("./router/downloadRouter.cjs");
 const Props = require("./lib/Props.cjs");
 const { PrismaClient } = require("@prisma/client");
 
@@ -46,6 +47,7 @@ app.use("/", indexRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/upload-file", uploadRouter);
+app.use("/download", downloadRouter);
 app.get("*", (req, res) => {
   res.send("404 not found");
 });
