@@ -9,7 +9,7 @@
   <dialog class="file-dialog">
   </dialog>
   <script>
-      const fileDialog = document.querySelector(".file-dialog");
+    const fileDialog = document.querySelector(".file-dialog");
     function openFile(file) {
       fileDialog.innerHTML = "";
       const div = document.createElement("div");
@@ -18,7 +18,7 @@
       const name = document.createElement("p");
       const size = document.createElement("p");
       const uploadedAt = document.createElement('p');
-      const download = document.createElement("button");
+      const download = document.createElement("a");
       const closeButton = document.createElement("button");
 
       closeButton.addEventListener("click", () => fileDialog.close())
@@ -29,7 +29,12 @@
       download.innerText = "Download"
       closeButton.innerText ="Close";
       closeButton.className = "btn-danger"
+      download.className = "btn"
+      buttonDiv.className = "button-container"
 
+      download.href = file.url;
+      download.download = file.name; 
+    
 
       dataDiv.append(name, size, uploadedAt);
       buttonDiv.append(download , closeButton);

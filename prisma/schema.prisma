@@ -42,6 +42,8 @@ model File {
   id         String   @id @default(uuid())
   name       String
   size       String
+  filename   String?
+  url        String?
   uploadedAt DateTime @default(now())
   folder     Folder   @relation(fields: [folderId], references: [id])
   folderId   String
